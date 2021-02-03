@@ -11,8 +11,8 @@ const mg = mailgun({apiKey: "32bb37a9c46286a8dabc3d39bcf06ea3-07bc7b05-e0e05e27"
 
 // Import local modules
 require("./db/conn");
-const Registeruser = require("./../model/model");
-const Location = require("./../model/location");
+const Registeruser = require("./model/model");
+const Location = require("./model/location");
 
 // fastify.register(require("./routes/userroute"));
 fastify.register(require('fastify-cors'));
