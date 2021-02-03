@@ -5,7 +5,6 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 var otpGenerator = require('otp-generator');
 const mailgun = require("mailgun-js");
-// const mg = mailgun({apiKey: process.env.MAILGUN_APIKEY, domain: "sandboxf66bf61ca519403783b6fab8e2815aaa.mailgun.org"});
 const mg = mailgun({apiKey: "32bb37a9c46286a8dabc3d39bcf06ea3-07bc7b05-e0e05e27", domain: "sandboxf66bf61ca519403783b6fab8e2815aaa.mailgun.org"});
 
 
