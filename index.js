@@ -11,9 +11,9 @@ fastify.register(require('fastify-cors'));
 
 
 // Listen
-fastify.listen(5000, '0.0.0.0' , (err) => {
+fastify.listen(process.env.PORT, '0.0.0.0' , (err) => {
     if(err)
         fastify.log.error(err);
     else
-        console.log(`Listening at port no ${5000}`);
+        console.log(`Listening at port no ${process.env.PORT}`);
 })
