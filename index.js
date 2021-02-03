@@ -8,6 +8,8 @@ var otpGenerator = require('otp-generator');
 const mailgun = require("mailgun-js");
 const mg = mailgun({apiKey: "32bb37a9c46286a8dabc3d39bcf06ea3-07bc7b05-e0e05e27", domain: "sandboxf66bf61ca519403783b6fab8e2815aaa.mailgun.org"});
 
+const express = require("express");
+const app = express();
 
 // Import local modules
 require("./db/conn");
@@ -294,18 +296,31 @@ let port = process.env.PORT || 5000;
     // })
 
 
-    fastify.get("/", (req, rep) => {
-        rep.send({msg : "get request"});
-    })
+    // fastify.get("/", (req, rep) => {
+    //     rep.send({msg : "get request"});
+    // })
 
 
 // Listen
-fastify.listen(port, (err) => {
-    if(err)
-        fastify.log.error(err);
-    else
-    {
-        console.log("hello");
-        console.log(`Listening at port no ${port}`);
-    }
+// fastify.listen(port, (err) => {
+//     if(err)
+//         fastify.log.error(err);
+//     else
+//     {
+//         console.log("hello");
+//         console.log(`Listening at port no ${port}`);
+//     }
+// })
+
+
+app.get("/", (req, res) => {
+    res.status(200).send("get request");
 })
+
+app.listen(port,(err )=>
+{
+    if(err)
+        console.log(err);
+    else
+        console.log(`Listening to port no ${port}`);
+})  
