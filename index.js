@@ -336,13 +336,13 @@ fastify.get('/', (req, rep) => {
     rep.send("get request ok ok");
 })
 
-let port = process.env.PORT || 5000;
-fastify.listen(port, (err) => {
+// let port = process.env.PORT || 5000;
+fastify.listen(process.env.PORT, '0.0.0.0', (err) => {
     if(err)
         fastify.log.error(err);
     else
     {
         console.log("hello");
-        console.log(`Listening at port no ${port}`);
+        console.log(`Listening at port no ${process.env.PORT}`);
     }
 })
